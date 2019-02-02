@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return imageView;
     }
     
-    //If the content does not fill the entore scrollview, center the content.
+    //If the content does not fill the entire scrollView, center the content.
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let top:  CGFloat = max((scrollView.frame.height - scrollView.contentSize.height) / 2, 0);
