@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews();
+        print("viewDidLayoutSubviews, scrollView.frame.size = \(scrollView.frame.size)");
+        
         //Zoom far enough out to see the entire image.
         scrollView.setZoomScale(scrollView.minimumZoomScale, animated: false);
     }
