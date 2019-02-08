@@ -15,7 +15,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        
         // Do any additional setup after loading the view, typically from a nib.
+        print("viewDidLoad, scrollView.frame.size = \(scrollView.frame.size)");
         scrollView.delegate = self;
         updateZoomFor(size: view.frame.size);
     }
@@ -23,6 +25,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     //Called when the scrollView has been given its correct size.
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews();
         //Zoom far enough out to see the entire image.
         scrollView.setZoomScale(scrollView.minimumZoomScale, animated: false);
     }
@@ -30,6 +33,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     //Let the user zoom far enough out to see the entire image, but no farther.
 
     func updateZoomFor(size: CGSize) {
+        print("updateZoomFor, size = \(size), imageView.frame.size = \(imageView.frame.size)");
         let widthScale: CGFloat = size.width / imageView.frame.width;
         let heightScale: CGFloat = size.height / imageView.frame.height;
         scrollView.minimumZoomScale = min(widthScale, heightScale);
